@@ -22,6 +22,7 @@ Output: [0,1]
 """
 
 
+# single pass dictionary solution T = O(n)
 def two_sum(self, nums: list[int], target: int) -> list[int]:
     # create an empty dictioary of checked numbers
     checked_dict = {}
