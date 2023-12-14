@@ -77,3 +77,32 @@ const fillValues = (head, values) => {
 
 console.log(linkedListValues(a));
 console.log(rLinkedListValues(a));
+
+
+const e = new Node(2);
+const f = new Node(8);
+const g = new Node(3);
+const h = new Node(7);
+e.next = f;
+f.next = g;
+g.next = h;
+
+// 3a. Sum of List - Iterative
+const sumList = (head) => {
+    let total = 0;
+    let curr = head;
+    while (curr != null) {
+        total += curr.value;
+        curr = curr.next;
+    }
+    return total;
+}
+
+// 3b. Sum of List - Recursive
+const rSumList = (head) => {
+    if (head == null) return 0;
+    return head.value + rSumList(head.next);
+};
+
+console.log(sumList(e));
+console.log(rSumList(e));
