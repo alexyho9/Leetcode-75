@@ -1,10 +1,12 @@
 /*
 Free Code Camp - Linked Lists for Technical Interviews (Structy)
+
 1. Linked List Traversal
 2. Linked List Values
 3. Sum of List
 4. Linked List Find
 5. Get Node Value
+
 */
 
 // Set up nodes
@@ -24,5 +26,38 @@ a.next = b;
 b.next = c;
 c.next = d;
 
-// 1. Linked List Traversal - Iterative
+//  A -> B -> C -> D -> NULL
 
+
+// 1a. Linked List Traversal - Iterative
+const printLinkedList = (head) => {
+    let current = head;
+    while (current != null) {
+        console.log(current.value);
+        current = current.next;
+    }
+};
+
+// 1b. Linked List Traversal - Recursive
+const rPrintLinkedList = (head) => {
+    // Base Case
+    if (head == null) return;
+    // Recursive Case
+    console.log(head.value);
+    rPrintLinkedList(head.next);
+}
+
+printLinkedList(a);
+rPrintLinkedList(a);
+
+
+// 1a. Linked List Values - Iterative
+const linkedListValues = (head) => {
+    const values = [];
+    let current = head;
+    while (current != null) {
+        values.push(current.value);
+        current = current.next;
+    }
+    return values;
+}
