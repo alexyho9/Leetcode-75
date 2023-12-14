@@ -47,11 +47,11 @@ const rPrintLinkedList = (head) => {
     rPrintLinkedList(head.next);
 }
 
-printLinkedList(a);
-rPrintLinkedList(a);
+// printLinkedList(a);
+// rPrintLinkedList(a);
 
 
-// 1a. Linked List Values - Iterative
+// 2a. Linked List Values - Iterative
 const linkedListValues = (head) => {
     const values = [];
     let current = head;
@@ -61,3 +61,19 @@ const linkedListValues = (head) => {
     }
     return values;
 }
+
+// 2b. Linked List Values - Recursive
+const rLinkedListValues = (head) => {
+    const values = [];
+    fillValues(head, values);
+    return values;
+};
+
+const fillValues = (head, values) => {
+    if (head == null) return;
+    values.push(head.value);
+    fillValues(head.next, values);
+}
+
+console.log(linkedListValues(a));
+console.log(rLinkedListValues(a));
