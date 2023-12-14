@@ -106,3 +106,55 @@ const rSumList = (head) => {
 
 console.log(sumList(e));
 console.log(rSumList(e));
+
+
+// 4a. Find target value - Iterative
+const findTarget = (head, target) => {
+    let curr = head;
+    while (curr) {
+        if (curr.value == target) return true;
+        curr = curr.next;
+    }
+    return false
+};
+
+// 4b. Find target value - Recursive
+const rFindTarget = (head, target) => {
+    if (head == null) return false;
+    if (head.value == target) return true;
+    return rFindTarget(head.next, target);
+}
+
+console.log(findTarget(e, 7));
+console.log(findTarget(a, 'G'));
+console.log(rFindTarget(e, 7));
+console.log(rFindTarget(a, 'G'));
+
+
+// 5a. Get Node Value - Iterative
+const getNodeValue = (head, index) => {
+    let counter = 0;
+    let curr = head;
+    while (curr) {
+        if (counter == index) return curr.value;
+        curr = curr.next;
+        counter++;
+    }
+    return null;
+}
+
+// 5b. Get Node Value - Recursive
+const rGetNodeValue = (head, index) => {
+    if (head == null) return null;
+    if (index == 0) return head.value;
+    return rGetNodeValue(head.next, index - 1);
+}
+
+console.log(getNodeValue(a, 2));
+console.log(rGetNodeValue(e, 2));
+
+
+// 6a. Reverse List - Iterative
+
+
+// 6b. Reverse List - Recursive
