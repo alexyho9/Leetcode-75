@@ -155,6 +155,25 @@ console.log(rGetNodeValue(e, 2));
 
 
 // 6a. Reverse List - Iterative
-
+const reverseList = (head) => {
+    let prev = null;
+    let curr = head;
+    while (curr) {
+        let next = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = next;
+    }
+    return prev;
+}
 
 // 6b. Reverse List - Recursive
+const rReverseList = (head, prev = null) => {
+    if (head == null) return prev;
+    let next = head.next;
+    head.next = prev;
+    return reverseList(next, head);
+}
+
+console.log(reverseList(a));
+console.log(rReverseList(e));
