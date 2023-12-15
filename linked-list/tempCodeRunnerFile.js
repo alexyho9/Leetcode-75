@@ -1,1 +1,0 @@
-let next = curr.next;
