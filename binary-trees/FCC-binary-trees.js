@@ -51,6 +51,19 @@ const rDFV = (root) => {
 
 
 // Iterative Breadth First Traversal
+// Note: Requires a queue, thus a recursive solution would be inefficient to implement
+const iBFV = (root) => {
+    if (root == null) return [];
+    const result = [];
+    const queue = [ root ];
 
+    while (queue.length > 0) {
+        const current = queue.shift();
+        result.push(current.value);
+        if (current.left != null) queue.push(current.left);
+        if (current.right != null) queue.push(current.right);
+    }
+    return result;
+}
 
-// Recursive Breadth First Traversal
+console.log(iBFV(a));
