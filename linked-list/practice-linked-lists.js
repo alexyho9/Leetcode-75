@@ -18,4 +18,4 @@ c.next = d;
 d.next = e;
 e.next = f;
 
-console.log(a);
+// Add node to linked list
