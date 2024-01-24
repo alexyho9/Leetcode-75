@@ -9,8 +9,7 @@ function binarySearch(array, target){
         else if (array[mid] < target) left = mid + 1;
         mid = Math.floor((left + right) / 2);
     }
-    if (array[mid] === target) return mid;
-    return -1;
+    return array[mid] === target ?  mid : -1;
 }
 
 console.log(binarySearch([
